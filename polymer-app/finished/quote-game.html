@@ -1,0 +1,43 @@
+<link rel="import" href="../components/polymer/polymer.html">
+<link rel="import" href="../quote-service/quote-service.html">
+<link rel="import" href="quote-card.html">
+
+<polymer-element name="quote-game" attributes="show">
+  <template>
+    <style>
+    :host {
+      display: block;
+      width: 100%;
+    }
+    quote-card {
+      margin-bottom: 30px;
+    }
+    </style>
+
+    <quote-service id="service" quotes="{{quotes}}"></quote-service>
+    
+    <div layout vertical center>
+      <template repeat="{{quote in quotes}}">
+        <quote-card
+          favorite="{{quote.favorite}}"
+          on-favorite-tap="{{handleFavorite}}"
+          hidden?="{{show == 'favorites' && !quote.favorite}}">
+          <img src="{{quote.avatar}}" width="70" height="70">
+          <h2>{{quote.title}}</h2>
+          <h4>{{quote.character}} - <i>{{quote.date}}</i></h4>
+          <h4>{{quote.character}} - <i>{{quote.date}}</i></h4>
+          <p>{{quote.quote}}</p>
+        </quote-card>
+      </template>
+    </div>
+  </template>
+
+  <script>
+  Polymer({
+    handleFavorite: function(event, detail, sender) {
+      var quote = sender.templateInstance.model.quote;
+      this.$.service.setFavorite(quote.uid, quote.favorite);
+    }
+  });
+  </script>
+</polymer-element>

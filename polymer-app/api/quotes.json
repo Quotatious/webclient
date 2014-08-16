@@ -1,0 +1,32 @@
+[
+  {
+    "uid": 1,
+    "quote" : "I love the smell of napalm in the morning",
+    "title" : "Apocalypse Now",
+    "director" : "Francis Ford Coppola",
+    "character" : "Lieutenant Colonel Bill Kilgore",
+    "date" : "1979",
+    "avatar" : "../images/avatar-01.svg",
+    "favorite": false
+  },
+    {
+    "uid": 2,
+    "quote" : "Heeere's Johnny!",
+    "title" : "The Shining",
+    "director" : "Stanley Kubrick",
+    "character" : "Jack Torrance",
+    "date" : "1980",
+    "avatar" : "../images/avatar-02.svg",
+    "favorite": true
+  },
+    {
+    "uid": 3,
+    "quote" : "Tonight, we dine in hell!",
+    "title" : "300",
+    "director" : "Zach Snyder",
+    "character" : "King Leonidas",
+    "date" : "2006",
+    "avatar" : "../images/avatar-03.svg",
+    "favorite": false
+  }
+]
