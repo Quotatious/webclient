@@ -37,9 +37,9 @@
       position: absolute;
       top: 3px;
       right: 3px;
-      fill: #636363;
+      fill: #03b223;
     }
-    :host([favorite]) core-icon-button {
+    :host([moderated]) core-icon-button {
       fill: #da4336;
     }
     </style>
@@ -51,22 +51,22 @@
       <content select="h4"></content>
 
     <core-icon-button
-      id="favicon"
-      icon="favorite"
-      on-tap="{{favoriteTapped}}"></core-icon-button>
+      id="moderated"
+      icon="check"
+      on-tap="{{moderatedTapped}}"></core-icon-button>
     <content></content>
   </template>
   <script>
   Polymer('quote-card', {
     publish: {
-      favorite: {
+      moderated: {
         value: false,
         reflect: true
       }
     },
-    favoriteTapped: function(event, detail, sender) {
-      this.favorite = !this.favorite;
-      this.fire('favorite-tap');
+    moderatedTapped: function(event, detail, sender) {
+      this.moderated = !this.moderated;
+      this.fire('moderated-tap');
     }
   });
   </script>

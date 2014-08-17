@@ -19,13 +19,13 @@
     <div layout vertical center>
       <template repeat="{{quote in quotes}}">
         <quote-card
-          favorite="{{quote.favorite}}"
-          on-favorite-tap="{{handleFavorite}}"
-          hidden?="{{show == 'favorites' && !quote.favorite}}">
-          <img src="{{quote.avatar}}" width="70" height="70">
-          <h2>{{quote.title}}</h2>
-          <h4>{{quote.character}} - <i>{{quote.date}}</i></h4>
-          <p>{{quote.quote}}</p>
+          moderated="{{quote.moderated}}"
+          on-moderated-tap="{{handleModerated}}"
+          hidden?="{{show == 'moderated' && !quote.moderated}}">
+          <img src="../images/film9.svg" width="70" height="70">
+          <h2>{{quote.film}}</h2>
+          <h4>{{quote.character}} - <i>{{quote.release_date}}</i></h4>
+          <p>{{quote.content}}</p>
         </quote-card>
       </template>
     </div>
@@ -33,9 +33,9 @@
 
   <script>
   Polymer({
-    handleFavorite: function(event, detail, sender) {
+    handleModerated: function(event, detail, sender) {
       var quote = sender.templateInstance.model.quote;
-      this.$.service.setFavorite(quote.uid, quote.favorite);
+      this.$.service.setModerated(quote.uid, quote.moderated);
     }
   });
   </script>
